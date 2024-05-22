@@ -55,12 +55,11 @@ function generatePlaylist(guardians, songs) {
   // Getting each guardians genre
   Object.keys(guardians).map((guardian) => {
     const guardianGenre = guardians[guardian];
-    console.log(guardianGenre);
+    const guardianSongGenre = songs.filter(
+      (songs) => songs.genre === guardianGenre
+    );
+    console.log(guardianSongGenre);
   });
-
-  // Checking for each guardians genre's song/songs
-  const guardiansSongs = songs.filter((songs) => songs.genre === guardianGenre);
-  console.log(guardiansSongs);
 }
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
