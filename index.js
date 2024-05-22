@@ -32,6 +32,7 @@ const songs = [
   { title: "Redrum", artist: "21 Savage", genre: "Hip Hop" },
   // Feel free to add even more songs
 ];
+// console.log(songs);
 
 // Object containing each Guardian's preferred genre
 const guardians = {
@@ -48,11 +49,18 @@ const guardians = {
 function generatePlaylist(guardians, songs) {
   // Use the map() function to create playlists for each Guardian
   // Your code here
-  const guardiansNames = Object.entries(guardians);
+  const guardiansNames = Object.keys(guardians);
   console.log(guardiansNames);
 
+  // Getting each guardians genre
+  Object.keys(guardians).map((guardian) => {
+    const guardianGenre = guardians[guardian];
+    console.log(guardianGenre);
+  });
 
-
+  // Checking for each guardians genre's song/songs
+  const guardiansSongs = songs.filter((songs) => songs.genre === guardianGenre);
+  console.log(guardiansSongs);
 }
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
