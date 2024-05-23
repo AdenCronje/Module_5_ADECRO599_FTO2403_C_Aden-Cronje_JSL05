@@ -72,7 +72,9 @@ function generatePlaylist(guardians, songs) {
       const songDiv = document.createElement("div");
       songDiv.classList.add("song");
       const title = document.createElement("span");
+      title.textContent = `${songs.title} - ${songs.artist}`;
       title.classList.add("title");
+
       let artistName = document.createElement("span");
       songDiv.appendChild(title, artistName);
 
