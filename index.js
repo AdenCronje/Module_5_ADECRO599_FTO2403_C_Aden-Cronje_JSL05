@@ -52,14 +52,30 @@ function generatePlaylist(guardians, songs) {
   const guardiansNames = Object.keys(guardians);
   console.log(guardiansNames);
 
-  // Getting each guardians genre
+  // Getting each guardians genre's song/song's
   Object.keys(guardians).map((guardian) => {
     const guardianGenre = guardians[guardian];
     const guardianSongGenre = songs.filter(
       (songs) => songs.genre === guardianGenre
     );
-    console.log(guardianSongGenre);
+
+// Displaying on HTML
+   playlist.forEach(song => {
+    //Create HTML elements
+    
+   });
+    
   });
+
+  // Playlists for guardians in HTML
+  // const guardiansPlaylist = document.querySelector(".playlist");
+  // let htmlToAppend = "";
+
+  // guardiansNames.forEach((guardians) => {
+  //   htmlToAppend += `<div>${guardiansNames}</div>
+  //   <div>${songs.guardianSongGenre}</div>`;
+  //   guardiansPlaylist.innerHTML = htmlToAppend;
+  // });
 }
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
