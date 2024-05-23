@@ -59,23 +59,37 @@ function generatePlaylist(guardians, songs) {
       (songs) => songs.genre === guardianGenre
     );
 
-// Displaying on HTML
-   playlist.forEach(song => {
-    //Create HTML elements
-    
-   });
-    
+    // Displaying on HTML
+    // Container div for playlist
+    const playlistDiv = document.createElement("div");
+    playlistDiv.classList.add("playlist");
+
+    const guardianName = document.createElement("h2");
+    guardianName.textContent = `${guardian}'s Playlist`;
+    playlistDiv.appendChild(guardianName);
+
+    guardianSongGenre.forEach((songs) => {
+      const songDiv = document.createElement("div");
+      songDiv.classList.add("song");
+      const title = document.createElement("span");
+      title.classList.add("title");
+      let artistName = document.createElement("span");
+      songDiv.appendChild(title, artistName);
+
+      playlistDiv.appendChild(songDiv);
+
+      playlists.appendChild(playlistDiv);
+    });
+
+    // const title = document.createElement("span");
+    // title.classList.add("title");
+    // let artistName = document.createElement("span");
+    // songDiv.appendChild(title, artistName);
+
+    // playlistDiv.appendChild(songDiv);
+
+    // playlists.appendChild(playlistDiv);
   });
-
-  // Playlists for guardians in HTML
-  // const guardiansPlaylist = document.querySelector(".playlist");
-  // let htmlToAppend = "";
-
-  // guardiansNames.forEach((guardians) => {
-  //   htmlToAppend += `<div>${guardiansNames}</div>
-  //   <div>${songs.guardianSongGenre}</div>`;
-  //   guardiansPlaylist.innerHTML = htmlToAppend;
-  // });
 }
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
