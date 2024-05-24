@@ -75,7 +75,7 @@ function generatePlaylist(guardians, songs) {
       title.textContent = `${songs.title} - ${songs.artist}`;
       title.classList.add("title");
 
-      let artistName = document.createElement("span");
+      const artistName = document.createElement("span");
       songDiv.appendChild(title, artistName);
 
       playlistDiv.appendChild(songDiv);
